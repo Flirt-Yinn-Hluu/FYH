@@ -20,6 +20,7 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slider.css"
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
@@ -29,6 +30,7 @@
 
     <!-- custom js file link  -->
     <script src="script.js" defer></script>
+    <script src="slider.js"></script>
 
 
 
@@ -142,18 +144,71 @@
 </div>
 
 
-ဘယ်အချိန်တွေ ဖလစ်လို့ရမှာလဲ ?
+<!-- ဘယ်အချိန်တွေ ဖလစ်လို့ရမှာလဲ ?
       Volunteer တွေရဲ့ ငှားလို့ရမယ့် အချိန်တွေကို 
 Link ကနေ ဝင်ကြည့်လို့ရပါတယ်
 <div>
     <a href="time.jpg">Volunteerတွေရဲ့ ငှားလို့ရမယ့် အချိန်တွေကိုကြည့်မယ်</a>
 
-</div>
+</div> -->
 Flirt တဲ့ service တစ်ခုတည်းရှိတာလား ?
       လုံးဝ(လုံးဝ) မဟုတ်ပါဘူး ။ flirt တဲ့အပြင်
 ချစ်စရာကောင်းတဲ့ project လေးတွေ လုပ်ပေးတယ် ။ တစ်ခါတစ်ရံမှာ မဲရောင်းတာမျိုးရှိပါတယ်။
         </span>
         
+
+    <section class="services" id="services">
+        <div class="heading">
+        <h1>ဖလစ်ရင်းလှူ တည်ထောင်ခြင်း နှစ်နှစ်ပြည့် အမှတ်တရ</h1>
+            <div class="content">
+                <div class="images">
+                   <img src="anni/2/1.jpg">
+                   <img src="anni/2/2.jpg">
+                   <img src="anni/2/3.jpg">
+                   <img src="anni/2/4.jpg">
+                   <img src="anni/2/5.jpg">
+                   <img src="anni/2/6.jpg">
+                   <img src="anni/2/7.jpg">
+                </div>
+                <div class="btm-slides">
+                   <span onclick="btm_slide(1)"></span>
+                   <span onclick="btm_slide(2)"></span>
+                   <span onclick="btm_slide(3)"></span>
+                   <span onclick="btm_slide(4)"></span>
+                   <span onclick="btm_slide(5)"></span>
+                   <span onclick="btm_slide(6)"></span>
+                   <span onclick="btm_slide(7)"></span>
+                </div>
+                <div class="sliders left" onclick="side_slide(-1)">
+                   <span class="fas fa-angle-left"></span>
+                </div>
+                <div class="sliders right" onclick="side_slide(1)">
+                   <span class="fas fa-angle-right"></span>
+                </div>
+             </div>
+             <script>
+                var indexValue = 1;
+                showImg(indexValue);
+                function btm_slide(e){showImg(indexValue = e);}
+                function side_slide(e){showImg(indexValue += e);}
+                function showImg(e){
+                  var i;
+                  const img = document.querySelectorAll('img');
+                  const slider = document.querySelectorAll('.btm-slides span');
+                  if(e > img.length){indexValue = 1}
+                  if(e < 1){indexValue = img.length}
+                  for(i = 0; i < img.length; i++){
+                    img[i].style.display = "none";
+                  }
+                  for(i = 0; i < slider.length; i++){
+                    slider[i].style.background = "rgba(255,255,255,0.1)";
+                  }
+                  img[indexValue-1].style.display = "block";
+                  slider[indexValue-1].style.background = "white";
+                }
+             </script>
+        </div>
+    </section>
 
 
 
@@ -175,7 +230,7 @@ Flirt တဲ့ service တစ်ခုတည်းရှိတာလား ?
         </div>
 
         <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
-            <i class="far fa-check-circle"></i>
+            <i class="fas fa-fist-raised"></i>
             <h3>တော်လှန်ရေးအတွက် လက်မှတ်များစွာရရှိထား</h3>
             <p>ကျွန်တော်တို့ဘက်က ရရှိလာတဲ့ငွေကြေးမှန်သမျှကို တော်လှန်ရေးမှာပါဝင်နေတဲ့ PDFရဲဘော်တွေအတွက် ထောက်ပံပေးနေပါတယ်။</p>
         </div>
@@ -198,6 +253,12 @@ Flirt တဲ့ service တစ်ခုတည်းရှိတာလား ?
             <i class="fas fa-headset"></i>
             <h3>24/7 support</h3>
             <p>နေ့ ညမပျက် 24နာရီ၊ ရာသီဥတုမရွေး ဝန်ဆောင်မှုတွေပေးနိုင်အောင် အမြဲကြိုးစာလျှက်ရှိပါသည်။</p>
+        </div>
+
+        <div class="box" data-aos="zoom-in-up">
+            <i class="fas fa-chart-line"></i>
+            <h3>ဖလစ်ရင်းလှူ တည်ထောင်ခြင်း နှစ်နှစ်ပြည့်</h3>
+            <p></p>
         </div>
 
     </div>
